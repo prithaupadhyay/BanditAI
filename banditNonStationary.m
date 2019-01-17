@@ -1,31 +1,31 @@
-%Epsilon greedy problem
-%monte carlo simulation 
+Q = zeros(1, 10);
+N = zeros(1, 10);
+R = zeros(1, 10000);
+epsilon = 0.1;
+m = ones(1, 10);
+alpha = 0.7;
 
-Q=zeros(1,10);
-N=zeros(1,10);
-e=0.1;
-alpha=0.7;
-for i=1:1000
-    if(rand > e)
-        [m,id]=max(Q);
-        A=id;
-    else
-        temp=randperm(10);
-        A=temp(1);
+for i=1:10000
+    if rand > epsilon
+        [a, id] = max(Q);
+        A = id;
+    else 
+        temp = randperm(10);
+        A = temp(1);
     end
-    R = banditA);  %reward
-    N(A)=N(A)+1;
-    Q(A)= Q(A)+ alpha*(R - Q(A));
+    [RR, m] = nonStatReward(A, m)
+    N(A) = N(A)+1;
+    Q(A) = Q(A) + (RR-Q(A))*alpha;
     if i==1
-        avg(i)= R;
+        R(i) = RR;
     else
-        avg(i)=((i-1)*avg(i-1)+R)/i;
+        R(i) = ((i-1)*R(i-1) + RR)/i;
     end
+    
 end
-%Qn+1=(1-alph)^nQt+ summation(alph(1-alph)^(n-i)Ri
-Q
-max(N)
-N
-avg
+
+i = 1:10000;
+plot(i, R, 'r');
+
 figure
 plot(1:1000,avg,"red")

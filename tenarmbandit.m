@@ -1,30 +1,30 @@
-%Epsilon greedy problem
-Q=zeros(1,10);
-N=zeros(1,10);
-e=0.1;
+Q = zeros(1, 10);
+N = zeros(1, 10);
+R = zeros(1, 10000);
+epsilon = 0.1;
+m = ones(1, 10);
+RR = 0;
 
-for i=1:1000
-    if(rand > e)
-        [m,id]=max(Q);
-        A=id;
-    else
-        temp=randperm(2);
-        A=temp(1);
+for i=1:10000
+    if rand > epsilon
+        [a, id] = max(Q);
+        A = id;
+    else 
+        temp = randperm(10);
+        A = temp(1);
     end
-    R = binaryBanditB(A);  %reward
-    N(A)=N(A)+1;
-    Q(A)= Q(A)+(R - Q(A))/N(A);
+    [RR, m] = nonStatReward(A, m)
+    N(A) = N(A)+1;
+    Q(A) = Q(A) + (RR-Q(A))/N(A);
     if i==1
-        avg(i)= R;
+        R(i) = RR;
     else
-        avg(i)=((i-1)*avg(i-1)+R)/i;
+        R(i) = ((i-1)*R(i-1) + RR)/i;
     end
+    
 end
 
-Q
-max(N)
-N
-avg
-figure
-plot(1:1000,avg,"red")
-ylim([0 1])
+i = 1:10000;
+plot(i, R, 'r');
+
+        
