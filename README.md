@@ -39,3 +39,12 @@ it is able to latch onto correct actions or not.
 This is same as problem 2 except the calculation of action rewards.  In this case, instead
 of using averaging method to update estimation of action reward, we are assigning more
 weights to the current reward earned by using alpha parameter having value 0.7
+
+## Contributors
+
+<ul>
+	<li><a href="https://github.com/prithaupadhyay">Pritha Upadhyay</a></li>
+	<li><a href="https://github.com/singhalkirtika">Kirtika Singhal</a></li>
+  <li><a href="https://github.com/roshniRam">Roshni Ram</a></li>
+</ul>
+		
