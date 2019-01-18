@@ -34,3 +34,8 @@ The 10-armed bandit that you developed (banditnonstat) is difficult to crack wit
 epsilon-greedy algorithm since the rewards are non-stationary. We did discuss about how to
 track non-stationary rewards in class. Write modified epsilon-greedy agent and show whether
 it is able to latch onto correct actions or not.
+
+#### Approach
+This is same as problem 2 except the calculation of action rewards.  In this case, instead
+of using averaging method to update estimation of action reward, we are assigning more
+weights to the current reward earned by using alpha parameter having value 0.7
