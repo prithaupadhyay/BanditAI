@@ -12,6 +12,12 @@ silon, we perform exploitation, which is based on the prior knowledge. For explo
 selected the maximum Q value and perform the action corresponding to which we will get
 the maximum reward. In the other case, we will explore and get a reward value based on the
 action.
+<br />
+### A
+![A](https://user-images.githubusercontent.com/30633549/51478980-00b93500-1db3-11e9-98bf-08da05d557f2.png) 
+<br />
+### B
+![B](https://user-images.githubusercontent.com/30633549/51479003-16c6f580-1db3-11e9-90da-846c0db4d655.png) 
 
 ### Problem 2
 Develop a 10-armed bandit in which all ten mean-rewards start out equal and then take
@@ -28,7 +34,9 @@ are normally distributed with mean value zero and standard deviation of 0.01.  T
 is added to the mean array and this updated array is used every time.  For every action a
 reward is given from this updated mean-rewards array. The rewards given in this case are
 non-stationary.
-
+<br />
+![Ten arm bandit](https://user-images.githubusercontent.com/30633549/51478866-aae48d00-1db2-11e9-8bd4-ef4b1c5b1d11.png)
+<br />
 ### Problem 3
 The 10-armed bandit that you developed (banditnonstat) is difficult to crack with standard
 epsilon-greedy algorithm since the rewards are non-stationary. We did discuss about how to
@@ -39,6 +47,8 @@ it is able to latch onto correct actions or not.
 This is same as problem 2 except the calculation of action rewards.  In this case, instead
 of using averaging method to update estimation of action reward, we are assigning more
 weights to the current reward earned by using alpha parameter having value 0.7
+<br />
+![Problem 3 output](https://user-images.githubusercontent.com/30633549/51478619-f34f7b00-1db1-11e9-9477-0a48aed3fe48.png)
 
 ## Contributors
 
